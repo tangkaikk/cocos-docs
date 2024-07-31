@@ -30,7 +30,8 @@
 - **初始场景分包**
 
   该项为可选项。<br>
-  勾选后，首场景及其相关的依赖资源会被构建到发布包目录 assets 下的内置 Asset Bundle — [start-scene](../../asset/bundle.md#%E5%86%85%E7%BD%AE-asset-bundle) 中，提高初始场景的资源加载速度。具体内容可参考文档 [初始场景的资源加载](publish-wechatgame.md#%E5%88%9D%E5%A7%8B%E5%9C%BA%E6%99%AF%E7%9A%84%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6)。
+  勾选后，首场景及其相关的依赖资源会被构建到发布包目录 assets 下的内置 Asset Bundle — [start-scene](../../asset/bundle.md#%E5%86%85%E7%BD%AE-asset-bundle) 中，提高初始场景的资源加载速度。
+  构建完成后，初始场景及其相关的依赖资源会被构建到发布包目录下的 assets/start-scene bundle 中。这个 bundle 不会放到远程服务器上，而是放在本地，引擎在启动阶段时就会自动从本地包内加载这个 bundle，从而加快初始场景的加载速度。
 
 - **资源服务器地址**
 
@@ -50,6 +51,10 @@
 
 ![preview](./publish-taobao-mini-game/preview.png)
 
+## 分包加载
+
+淘宝小游戏的分包加载，详情请参考 [小游戏分包](subpackage.md)。
+
 ## 淘宝小游戏环境的资源管理
 
 淘宝小游戏与微信小游戏类似，都存在着包体限制，超过 **4MB** 的额外资源，必须通过网络请求下载。<br>当包体过大时，可在 **构建发布** 面板配置 **资源服务器地址** 选项，将资源上传到远程服务器，详情请参考 [上传资源到远程服务器](../../asset/cache-manager.md)。
@@ -63,6 +68,7 @@
 - WebView
 - VideoPlayer
 - 自定义字体
+
 
 ## 淘宝与其他小游戏平台的差异
 
