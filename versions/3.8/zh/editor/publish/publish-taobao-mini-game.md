@@ -63,7 +63,6 @@
 - WebView
 - VideoPlayer
 - 自定义字体
-
 ## 淘宝与其他小游戏平台的差异
 
 - 全局变量的访问，需要挂载到 global 变量上。例：$global.my = my;
